@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var recipe_1 = require('./recipe');
 var recipe_service_1 = require('./recipe.service');
 var RecipesList = (function () {
     function RecipesList(recipeService) {
@@ -23,7 +23,7 @@ var RecipesList = (function () {
             .then(function (recipes) { return _this.recipes = recipes; });
     };
     RecipesList.prototype.onSelect = function (recipe) {
-        this.selectedRecipe = recipe_1.Recipe;
+        this.selectedRecipe = recipe;
     };
     RecipesList = __decorate([
         core_1.Component({
@@ -33,6 +33,6 @@ var RecipesList = (function () {
         __metadata('design:paramtypes', [recipe_service_1.RecipeService])
     ], RecipesList);
     return RecipesList;
-})();
+}());
 exports.RecipesList = RecipesList;
 //# sourceMappingURL=recipes-list.component.js.map

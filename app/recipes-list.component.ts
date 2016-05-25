@@ -28,7 +28,7 @@ export class RecipesList implements OnInit{
     }
 
     onSelect(recipe: Recipe) {
-        this.selectedRecipe = Recipe;
+        this.selectedRecipe = recipe;
     }
 
 }

@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var recipe_service_1 = require('./recipe.service');
+//import {Ingredient} from './ingredient';
 var IngredientService = (function () {
     function IngredientService(recipeService) {
         this.recipeService = recipeService;
@@ -19,10 +21,10 @@ var IngredientService = (function () {
         });
     };
     IngredientService = __decorate([
-        core_1.Injectables, 
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [recipe_service_1.RecipeService])
     ], IngredientService);
     return IngredientService;
-})();
+}());
 exports.IngredientService = IngredientService;
 //# sourceMappingURL=ingredients.service.js.map

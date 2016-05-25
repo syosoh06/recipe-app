@@ -1,3 +1,4 @@
+"use strict";
 exports.RECIPES = [
     { id: 1, name: 'Pumpkin Pie', ingredients: ['pumpkin', 'pie'] },
     { id: 2, name: 'Spaghetti', ingredients: ['spaghetti', 'meatballs'] },

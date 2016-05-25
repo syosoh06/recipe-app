@@ -1,1 +1,1 @@
-{"version":3,"file":"ingredient.js","sourceRoot":"","sources":["ingredient.ts"],"names":["Ingredient","Ingredient.constructor"],"mappings":"AAAA;IAAAA;IAEAC,CAACA;IAADD,iBAACA;AAADA,CAACA,AAFD,IAEC;AAFY,kBAAU,aAEtB,CAAA"}
+{"version":3,"file":"ingredient.js","sourceRoot":"","sources":["ingredient.ts"],"names":[],"mappings":";AAAA;IAAA;IAEA,CAAC;IAAD,iBAAC;AAAD,CAAC,AAFD,IAEC;AAFY,kBAAU,aAEtB,CAAA"}

@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ingredients_service_1 = require("./ingredients.service");
+//import {Ingredient} from "./ingredient";
 var RecipeDetail = (function () {
     function RecipeDetail(ingService) {
         this.ingService = ingService;
@@ -21,6 +23,6 @@ var RecipeDetail = (function () {
         __metadata('design:paramtypes', [ingredients_service_1.IngredientService])
     ], RecipeDetail);
     return RecipeDetail;
-})();
+}());
 exports.RecipeDetail = RecipeDetail;
 //# sourceMappingURL=recipe-detail.component.js.map

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {IngredientService} from "./ingredients.service";
-import {Ingredient} from "./ingredient";
+//import {Ingredient} from "./ingredient";
 
 @Component({
   selector: 'recipe-detail',
@@ -20,7 +20,7 @@ import {Ingredient} from "./ingredient";
 
 export class RecipeDetail {
 
-    ingredients: Ingredient[];
+    ingredients: string[];
 
 constructor(private ingService: IngredientService){}
 

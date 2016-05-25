@@ -1,10 +1,10 @@
-import {Injectables} from '@angular/core';
+import {Injectable} from '@angular/core';
 
 import {Recipe} from './recipe';
 import {RecipeService} from './recipe.service';
+//import {Ingredient} from './ingredient';
 
-
-@Injectables
+@Injectable()
 export class IngredientService {
 
     constructor(private recipeService: RecipeService){ }
