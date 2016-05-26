@@ -15,8 +15,20 @@ var IngredientService = (function () {
     function IngredientService(recipeService) {
         this.recipeService = recipeService;
     }
-    IngredientService.prototype.getIngredients = function (id) {
-        this.recipeService.getRecipe(id).then(function (recipe) {
+    IngredientService.prototype.setSelectedRecipe = function (recipe) {
+        this.selectedRecipe = recipe;
+    };
+    IngredientService.prototype.getSelectedRecipe = function () {
+        return this.selectedRecipe;
+    };
+    IngredientService.prototype.setDisplay = function (display) {
+        this.display = display;
+    };
+    IngredientService.prototype.getDisplay = function () {
+        return this.display;
+    };
+    IngredientService.prototype.getIngredients = function () {
+        this.recipeService.getRecipe(this.selectedRecipe.id).then(function (recipe) {
             return recipe.ingredients;
         });
     };

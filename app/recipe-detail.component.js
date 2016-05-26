@@ -10,15 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ingredients_service_1 = require("./ingredients.service");
-//import {Ingredient} from "./ingredient";
+var recipe_1 = require('./recipe');
+var edit_recipe_component_1 = require('./edit-recipe.component');
+var delete_recipe_component_1 = require('./delete-recipe.component');
 var RecipeDetail = (function () {
     function RecipeDetail(ingService) {
         this.ingService = ingService;
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', recipe_1.Recipe)
+    ], RecipeDetail.prototype, "selectedRecipe", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], RecipeDetail.prototype, "recipes", void 0);
     RecipeDetail = __decorate([
         core_1.Component({
             selector: 'recipe-detail',
-            template: "\n    <div>\n    <h3>Ingredients</h3>\n    <div *ngFor=\"let ing in ingredients\">\n    <p>{{ing}}</p>\n    </div>\n    <div>\n    <span><button>Delete</button></span>\n    <span><button>Edit</button></span>\n    </div>\n    </div>\n    "
+            template: "\n    <div>\n    <h3>Ingredients</h3>\n    <div *ngFor=\"let ing of selectedRecipe.ingredients\">\n    <p>{{ing.name}}</p>\n    </div>\n    <div>\n    <delete-recipe [recipes]=\"recipes\" [id]=\"selectedRecipe.id\"></delete-recipe>\n    <edit-recipe [ingredients] = \"selectedRecipe.ingredients\"></edit-recipe>\n    </div>\n    </div>\n    ",
+            directives: [
+                edit_recipe_component_1.EditRecipe,
+                delete_recipe_component_1.DeleteRecipe
+            ]
         }), 
         __metadata('design:paramtypes', [ingredients_service_1.IngredientService])
     ], RecipeDetail);

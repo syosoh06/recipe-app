@@ -1,3 +1,3 @@
 export class Ingredient {
-    ingredient: string;
+    ingredient: {name: string};
 }
