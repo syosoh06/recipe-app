@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Recipe } from './recipe';
 import { Ingredient } from './ingredient';
 
@@ -20,7 +20,7 @@ import { Ingredient } from './ingredient';
         <h4>Recipe Name</h4>
         <input [(ngModel)] = "recipe.name"/>
         <h4>Ingredients</h4>
-        <div *ngFor = "let ing of ingredients">
+        <div *ngFor = "let ing of recipe.ingredients">
         <input [(ngModel)]="ing.name"/>
         </div>
         <button (click) = "addIngredient()">Add Ingredient</button>
@@ -36,20 +36,25 @@ import { Ingredient } from './ingredient';
     `
 })
 
-export class AddRecipe {
+export class AddRecipe implements OnInit{
 
     @Input() recipes: Recipe[];
-    recipe: Recipe = {name: ''};
-    ingredients: Ingredient[] = [{name: ''}];
+    recipe: Recipe;
+    ingredients: Ingredient[];
+
+    ngOnInit(){
+        this.recipe={name: '', id: 0, ingredients: [{name: ''}]};
+    }
 
     addIngredient(){
-        this.ingredients.push({name: ''});
+        this.recipe.ingredients.push({name: ''});
     }
 
     addRecipe(){
         this.recipe.id=this.recipes.length+1;
-        this.recipe.ingredients=this.ingredients;
         this.recipes.push(this.recipe);
+        this.ngOnInit();
+
     }
 
 }

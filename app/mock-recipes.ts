@@ -1,4 +1,5 @@
 import { Recipe } from './recipe';
+import {Ingredient} from './ingredient';
 
 export var RECIPES: Recipe[] = [
     {id: 1, name: 'Pumpkin Pie', ingredients: [{name: 'pumpkin'}, {name:'pie'}]},
