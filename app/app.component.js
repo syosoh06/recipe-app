@@ -8,40 +8,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+//app.component.ts
 var core_1 = require('@angular/core');
-var recipes_list_component_1 = require('./recipes-list.component');
-var add_recipe_component_1 = require('./add-recipe.component');
-var recipe_service_1 = require('./recipe.service');
-var ingredients_service_1 = require("./ingredients.service");
-var recipe_detail_component_1 = require("./recipe-detail.component");
+var router_deprecated_1 = require('@angular/router-deprecated');
+var recipes_component_1 = require('./recipes.component');
+var login_component_1 = require('./login.component');
+var signup_component_1 = require('./signup.component');
 var AppComponent = (function () {
-    function AppComponent(recipeService, ingredientService) {
-        this.recipeService = recipeService;
-        this.ingredientService = ingredientService;
+    function AppComponent(router) {
+        this.router = router;
     }
-    AppComponent.prototype.ngOnInit = function () {
-        this.getRecipes();
-    };
-    AppComponent.prototype.getRecipes = function () {
-        var _this = this;
-        this.recipeService.getRecipes()
-            .then(function (recipes) { return _this.recipes = recipes; });
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <recipes-list [recipes]=\"recipes\"></recipes-list>\n    <add-recipe [recipes]=\"recipes\"></add-recipe>\n    ",
+            template: "\n<router-outlet></router-outlet>\n",
             directives: [
-                recipes_list_component_1.RecipesList,
-                add_recipe_component_1.AddRecipe,
-                recipe_detail_component_1.RecipeDetail
-            ],
-            providers: [
-                recipe_service_1.RecipeService,
-                ingredients_service_1.IngredientService
+                router_deprecated_1.ROUTER_DIRECTIVES
             ]
-        }), 
-        __metadata('design:paramtypes', [recipe_service_1.RecipeService, ingredients_service_1.IngredientService])
+        }),
+        router_deprecated_1.RouteConfig([
+            { path: '/', redirectTo: ['LoginComponent'] },
+            { path: '/login', as: 'LoginComponent', component: login_component_1.LoginComponent },
+            { path: '/recipes', as: 'RecipesComponent', component: recipes_component_1.RecipesComponent },
+            { path: '/signup', as: 'SignupComponent', component: signup_component_1.SignupComponent }
+        ]), 
+        __metadata('design:paramtypes', [router_deprecated_1.Router])
     ], AppComponent);
     return AppComponent;
 }());
